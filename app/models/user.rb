@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
 validates :name, presence: true, length: { minimum: 2 }
 
+has_many :books, dependent: :destroy
+
 end
