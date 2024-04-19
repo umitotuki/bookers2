@@ -13,23 +13,31 @@
 
   <body>
     <header>
-      <span><%= link_to 'Bookers', root_path %></span>
-      <% if user_signed_in? %>
-        <li><%= link_to 'Home', user_path(current_user.id) %></li>
-        <li><%= link_to 'User', users_path %></li>
-        <li><%= link_to 'Books', books_path %></li>
-        <li>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-        </li>
-      <% else %>
-        <li><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'About', about_path %></li>
-        <li>
-          <%= link_to "sin up", new_user_registration_path %>
-        </li>
-        <li>
-          <%= link_to "Log in", new_user_session_path %>
-        </li>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <span><%= link_to 'Bookers', root_path ,style: "color: #ffffff;"%></span>
+        <% if user_signed_in? %>
+        　<ul class="list-unstyled d-flex">
+          <li class="flex mr-4"><i class="fa-solid fa-house" style="color: #ffffff;"></i><%= link_to 'Home', user_path(current_user.id),style: "color: #ffffff;" %></li>
+          <li class="flex mr-4"><i class="fa-solid fa-users" style="color: #ffffff;"></i><%= link_to 'User', users_path,style: "color: #ffffff;" %></li>
+          <li class="flex mr-4"><i class="fa-solid fa-book-open" style="color: #ffffff;"></i><%= link_to 'Books', books_path,style: "color: #ffffff;" %></li>
+          <li class="flex mr-4">
+            <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i><%= link_to "Log out", destroy_user_session_path, method: :delete ,style: "color: #ffffff;" %>
+          </li>
+          </ul>
+        <% else %>
+         <ul class="list-unstyled d-flex">
+          <li class="flex mr-4"><i class="fa-solid fa-house" style="color: #ffffff;"></i><%= link_to 'Home', root_path ,style: "color: #ffffff;"%></li>
+          <li class="flex mr-4"><i class="fa-solid fa-link" style="color: #ffffff;"></i><%= link_to 'About', about_path,style: "color: #ffffff;" %></li>
+          <li class="flex mr-4">
+            <i class="fa-solid fa-user-plus" style="color: #ffffff;"></i><%= link_to "sin up", new_user_registration_path,style: "color: #ffffff;" %>
+          </li>
+          <li class="flex mr-4">
+            <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i><%= link_to "Log in", new_user_session_path,style: "color: #ffffff;" %>
+          </li>
+        </ul>
+      </div>
+     </nav>
     <% end %>
   </header>
 
