@@ -1,7 +1,9 @@
-<%= render 'books/list', user: @user %>
+<main>
+ <div class="container">
+  <%= render 'books/list', user: @user %>
+
 
 <h2>User</h2>
-
 <% @users.each do |user| %>
 <div>
   <%= image_tag user.get_profile_image(100,100) %>
@@ -19,3 +21,5 @@
   </tbody>
 </table>
 <% end %>
+ </div>
+</main>
