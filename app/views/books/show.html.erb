@@ -1,4 +1,6 @@
+<main>
 <p id="notice"><%= flash[:notice] %></p>
+<%= render 'books/list',locals: { book: @book,  user: @user } %>
 <h2>Book detail</h2>
 
 <table class="table">
@@ -17,3 +19,4 @@
     </tr>
   </tbody>
 </table>
+</main>
