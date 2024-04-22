@@ -19,18 +19,19 @@
       <i class="fas fa-user-cog"></i>
       <% end %>
     </div>
-
-   <h2 class="mt-3">New book</h2>
-
-   <%= form_with model: book , url:'/books',method: :post do |f| %>
-
-   <h4>Title</h4>
-   <%= f.text_field :title %>
-
-   <h4>Opinion</h4>
-   <%= f.text_area :body %> <br/>
-
-   <%= f.submit 'Create Book', class:"btn btn-success" %>
-  <% end %>
+    <h2 class="mt-3">New book</h2>
+      <%= form_with model: book , url:'/books',method: :post do |f| %>
+    <div class="form-group">
+      <label class="book_taitl">Title</label>
+      <%= f.text_field :title %>
+    </div>
+    <div class="form-group">
+      <label class="book_opinion">Opinion</label>
+      <%= f.text_area :body %> <br/>
+    </div>
+    <div class="form-group">
+      <%= f.submit 'Create Book', class:"btn btn-success" %>
+      <% end %>
+    </div>
  </div> 
 </div>  
